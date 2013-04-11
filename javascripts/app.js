@@ -1,4 +1,6 @@
-var myModule = angular.module('Angello', []);
+var myModule = angular.module('Angello', [
+    'Angello.model'
+]);
 
 myModule.factory('angelloHelper', function($rootScope) {
     var buildIndex = function(source, property) {
@@ -18,12 +20,12 @@ myModule.factory('angelloHelper', function($rootScope) {
 
 myModule.controller('MainCtrl', function($scope, angelloModel, angelloHelper) {
     $scope.currentStory;
-    
+
     $scope.types = angelloModel.getTypes();
     $scope.statuses = angelloModel.getStatuses();
     $scope.stories = angelloModel.getStories();
-    $scope.typesIndex = angelloHelper.buildIndex($scope.types, 'name');
-    $scope.statusesIndex = angelloHelper.buildIndex($scope.statuses, 'name');
+    //$scope.typesIndex = angelloHelper.buildIndex($scope.types, 'name');
+    //$scope.statusesIndex = angelloHelper.buildIndex($scope.statuses, 'name');
 
     $scope.setCurrentStory = function(story) {
         $scope.currentStory = story;

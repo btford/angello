@@ -1,8 +1,8 @@
 
 angular.module('Angello.model', [
     'Angello.modelDefaults',
-    'Angello.pouchdb']).
-factory('model', function (modelDefaults, $q, couchdb) {
+    'Angello.pouchDB']).
+factory('angelloModel', function (modelDefaults, $q, pouchdb) {
 
     // transform fun (err, data) -> reject and resolve
     var nodify = function (deferred) {
@@ -17,13 +17,28 @@ factory('model', function (modelDefaults, $q, couchdb) {
 
     var getStatuses = function () {
         var deferred = $q.defer();
-        couchdb.query(function (doc) {
+        pouchdb.query(function (doc) {
             if (doc.type === 'status') {
                 emit(doc, null);
             }
         }, nodify(deferred));
 
-        return deferred;
+        return deferred.promise.then(function (data) {
+            if (data.length === 0) {
+                return setDefaultStatuses().then(getStatuses());
+            } else {
+                return data;
+            }
+        });
+    };
+
+    // return a promise when done
+    var setDefaultStatuses = function () {
+        return $q.all(modelDefaults.status.map(function (status) {
+            var deferred = $q.deferred;
+            pouchdb.post(status, nodify(deferred));
+            return deferred.promise;
+        }));
     };
 
     var getTypes = function () {
