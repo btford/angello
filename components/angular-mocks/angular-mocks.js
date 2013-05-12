@@ -660,7 +660,7 @@ angular.mock.dump = function(object) {
  * development please see {@link ngMockE2E.$httpBackend e2e $httpBackend mock}.
  *
  * During unit testing, we want our unit tests to run quickly and have no external dependencies so
- * we donâ€™t want to send {@link https://developer.mozilla.org/en/xmlhttprequest XHR} or
+ * we don’t want to send {@link https://developer.mozilla.org/en/xmlhttprequest XHR} or
  * {@link http://en.wikipedia.org/wiki/JSONP JSONP} requests to a real server. All we really need is
  * to verify whether a certain request has been sent or not, or alternatively just let the
  * application make requests, respond with pre-trained responses and assert that the end result is
@@ -792,7 +792,7 @@ angular.mock.dump = function(object) {
 
 
    it('should send msg to server', function() {
-     // now you donâ€™t care about the authentication, but
+     // now you don’t care about the authentication, but
      // the controller will still send the request and
      // $httpBackend will respond without you having to
      // specify the expectation and response for this request
@@ -926,8 +926,8 @@ function createHttpBackendMock($delegate, $browser) {
    * @returns {requestHandler} Returns an object with `respond` method that control how a matched
    *   request is handled.
    *
-   *  - respond â€“ `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
-   *    â€“ The respond method takes a set of static data to be returned or a function that can return
+   *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+   *    – The respond method takes a set of static data to be returned or a function that can return
    *    an array containing response status (number), response data (string) and response headers
    *    (Object).
    */
@@ -1045,8 +1045,8 @@ function createHttpBackendMock($delegate, $browser) {
    * @returns {requestHandler} Returns an object with `respond` method that control how a matched
    *  request is handled.
    *
-   *  - respond â€“ `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
-   *    â€“ The respond method takes a set of static data to be returned or a function that can return
+   *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+   *    – The respond method takes a set of static data to be returned or a function that can return
    *    an array containing response status (number), response data (string) and response headers
    *    (Object).
    */
@@ -1473,11 +1473,11 @@ angular.module('ngMockE2E', ['ng']).config(function($provide) {
  * @returns {requestHandler} Returns an object with `respond` and `passThrough` methods that
  *   control how a matched request is handled.
  *
- *  - respond â€“ `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
- *    â€“ The respond method takes a set of static data to be returned or a function that can return
+ *  - respond – `{function([status,] data[, headers])|function(function(method, url, data, headers)}`
+ *    – The respond method takes a set of static data to be returned or a function that can return
  *    an array containing response status (number), response data (string) and response headers
  *    (Object).
- *  - passThrough â€“ `{function()}` â€“ Any request matching a backend definition with `passThrough`
+ *  - passThrough – `{function()}` – Any request matching a backend definition with `passThrough`
  *    handler, will be pass through to the real backend (an XHR request will be made to the
  *    server.
  */

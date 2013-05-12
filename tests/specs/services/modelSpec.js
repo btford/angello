@@ -3,7 +3,7 @@
 describe('Service: angelloModel', function () {
 
   // load the service's module
-  beforeEach(module('Angello'));
+  beforeEach(module('Angello.model'));
 
   var modelService;
 
@@ -24,10 +24,8 @@ describe('Service: angelloModel', function () {
         getStatuses().
         map(function (status) { // get just the name of each status
           return status.name;
-        }).
-        indexOf('To Do')).
-      not.
-      toBe(-1);
+        })).
+        toContain('To Do');
     });
 
   });

@@ -1,0 +1,17 @@
+{
+  "name": "angular-dragon-drop",
+  "version": "0.0.1",
+  "main": "dragon-drop.js",
+  "dependencies": {
+    "angular": "~1.0.5"
+  },
+  "gitHead": "3c90ec4011c21597a363047b790ff11cd9b3b678",
+  "readme": "# angular-dragon-drop\n\"Drag and drop\" directives for AngularJS. Work in progress.\n\n## Install\n\n```shell\nbower install angular-dragon-drop\n```\n\n## Usage\n\nFirst:\n1. Include the `dragon-drop.js` script provided by this component into your app.\n2. Add `btford.dragon-drop` as a module dependency to your app.\n\nRepeats a template inside the dragon over a list.\n```html\n<div btf-dragon=\"item in list\">\n  {{item.name}}\n</div>\n<div btf-dragon=\"item in otherList\">\n  {{item.name}}\n</div>\n```\nYou can drag from one dragon onto another, and the models will be updated accordingly.\n\n## Config\nThis is not a kitchen sink every-option-you-can-think-of module. This is a starting point. Configure by forking and editing the code according to your needs.\n\n## Example\nSee `example.html`.\n\n## License\nMIT\n",
+  "readmeFilename": "README.md",
+  "_id": "angular-dragon-drop@0.0.1",
+  "description": "\"Drag and drop\" directives for AngularJS. Work in progress.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/btford/angular-dragon-drop.git"
+  }
+}
